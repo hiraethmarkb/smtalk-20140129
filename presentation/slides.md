@@ -4,6 +4,7 @@
 
 
 Mark Burns
+
 Twitter: @hydrantmark
 
 ---
@@ -12,83 +13,85 @@ Twitter: @hydrantmark
 
 ---
 
-# What is Stress?
+# 1. What is Stress?
 
 ---
 
-## Feeling of being unable to cope, when under too much mental and/or emotional pressure
+# Feeling of being unable to cope, when under too much mental and/or emotional pressure
 
 ---
 
-## Affects
+# Affects
 
-- How you think
-- How you feel
-- How you behave
-
----
-
-# Warning Signs
+- ## How you think
+- ## How you feel
+- ## How you behave
 
 ---
 
-## It's important to recognise signs and symptons 
+# 2. Warning Signs
 
 ---
 
-## Common signs
-
-- Mental
-- Physical
-- Behavioural
+# It's important to recognise signs and symptons 
 
 ---
 
-# How to Reduce Stress
+# Common signs
+
+- ## Mental
+- ## Physical
+- ## Behavioural
 
 ---
 
-## No quick fix
+# 3. How to Reduce Stress
 
 ---
 
-## Everyone is different 
-
-- Find what works for you
+# No quick fix
 
 ---
 
-## Talking
+# Everyone is different 
 
-- A Problem Shared is a Problem Halfed
-
----
-
-## Relaxation
-
-- 'Me Time'
+- ## Find what works for you
 
 ---
 
-## Exercise
+# Talking
+
+- ## A Problem Shared is a Problem Halfed
 
 ---
 
-## Try Something New
+# Relaxation
 
-- "Never be afraid to do something new. Remember, amateurs built the ark; professionals built the titanic." ~Anonymous
-
----
-
-## Take Control
-
-- Be Positive
+- ## 'Me Time'
 
 ---
 
-## Still need help?
-       
-- Speak to your GP
+# Exercise
+
+---
+
+# Try Something New
+
+## "Never be afraid to do something new. Remember, amateurs built the ark; professionals built the titanic." ~Anonymous
+
+---
+
+# Take Control
+
+- ## Be Positive
+- ## Accept what you can't change
+
+---
+
+# Still need help?
+
+- ## Make use of support networks
+- ## Speak to your GP
 
 ---
 

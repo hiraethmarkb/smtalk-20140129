@@ -13,13 +13,15 @@ It's a topic that doesn't get talked about enough, often for fear of appearing '
   ## What is Stress?
 
     - Feeling of being unable to cope, when under too much mental and/or emotional pressure
-    - \'Fight or Flight\' - modern times vs ancient times
+    
     - Not an illness
       - but can lead on to serious illness if not dealt with
+    
     - Many situations can cause stress
       - work
       - relationships
       - financial
+    
     - Affects
       - How you feel
       - How you think
@@ -27,43 +29,49 @@ It's a topic that doesn't get talked about enough, often for fear of appearing '
 
   ## Warning Signs
 
-    - Common signs
-      - mental
-        - loss of concentration
-        - anxiety
-        - irritablilty
-        - low self esteem
-        - constantantly worrying
-        - constantly thinking things through
-      - physical
-        - broken sleep
-        - sweating
-        - loss of appetite
-        - headaches
-        - muscle tension or pain
-        - dizziness
-    - Adoption of unhealthy coping methods
-      - Smoking
-      - Drinking
-      - Gambling
     - Important 
       - Key to recognise signs and symptons 
       - Can't be prevented, but can be managed and it's effects reduced
+
+    - Common signs
+      
+      - mental
+        - loss of concentration/motivation/focus
+        - anxiety
+        - restlessness  
+        - irritablilty
+      
+      - physical
+        - broken sleep
+        - headaches
+        - muscle tension or pain
+        - tired
+      
+      - behavioural 
+        - Over/Under eating
+        - Social withdrawal
+        - Drug/Alcohol abuse
 
   ## How to Reduce Stress
 
     - No quick fix
     - Find what works for you
     - Some options
-      - Relaxation
-        - \'Me Time\' 
-      - Exercise
+
       - Talking
+
+      - Relaxation
+        - 'Me Time' 
+      
+      - Exercise
+            
       - Try Something New
-      - Avoid Unhealthy Habits
+            
       - Take Control
         - Be positive
         - Accept what you can't change
+        - Avoid Unhealthy Habits
+     
       - Still need help?
         - Speak to your GP
           - Counselling

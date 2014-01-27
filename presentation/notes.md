@@ -8,7 +8,9 @@ It's a topic that doesn't get talked about enough, often for fear of appearing '
 
   ## Back Story
 
-    - Having experienced a period of depression, I have had to relook at how, and in some cases relearn how to deal with stress
+    - General - Can, and will, be experienced by anyone at some point in their life
+    - Personal - Period of depression, re-appraise, and in some cases relearn, how to deal with stress
+    - Effects can be reduced
 
   ## What is Stress?
 

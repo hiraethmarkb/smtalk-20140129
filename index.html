@@ -1,1 +1,1089 @@
-Hello World
+<!DOCTYPE html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Stress Management - The slides</title>
+        <!-- Styles -->
+    
+    <style type="text/css" media="print">
+      /*
+Letter 612 x 792
+A4     498 x 750
+*/
+
+/***************************************************************************/
+/* The bits that you probably want to override! */
+body {
+  font-size: 20pt;
+  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
+  color: black;
+  background-color: #fff; /* Colour outside of slide */
+}
+
+div.presentation, div.slide {
+  background-color: white; /* colour of the slide */
+}
+
+div.slide h1, div.slide h2, div.slide h3, div.slide h4, div.slide h5, div.slide h6 {
+  color: navy;
+  font-weight: normal;
+}
+
+div.slide h3, div.slide h4, div.slide h5, div.slide h6 {
+  margin-bottom: 6px;
+}
+
+div.slide h3 + p, div.slide h4 + p, div.slide h5 + p, div.slide h6 + p {
+  margin-top: 6px;
+}
+
+pre {
+  font-size: 12pt;
+  font-family: Monaco, Courier, monospace;
+}
+
+li {
+  line-height: 1.5em;
+  margin-left: 10pt;
+  /*padding: 10px 0*/;
+}
+
+li ul, li ul li {
+  margin-top: 0;
+}
+
+table {
+  margin-top: 6pt;
+  border-collapse: collapse;
+  width: 100%;
+}
+table th {
+  text-align: left;
+  border-bottom: 1px solid #666;
+}
+table td, table th {
+  padding-left:   10px;
+  padding-right:  10px;
+  padding-top:    4px;
+  padding-bottom: 4px;
+}
+tr > td:first-child, tr > th:first-child {
+  padding-left: 0;
+}
+
+/* .notes are displayed when you press '2' */
+.notes {
+  color: white;
+  background: #777;
+  opacity:0.90;
+}
+
+/* A title slide is a single header */
+.slide header:only-child h1 {
+  font-weight: bold;
+  font-size: 36pt;
+}
+
+/* Source and page number */
+aside.source, aside.page_number {
+  font-size: 14pt;
+}
+
+/* Quote and blockquote */
+blockquote          { text-indent: -1ex; margin-bottom: 10px;}
+blockquote *        { quotes: none; }
+blockquote p:before { content: '\201C'; }
+blockquote p:after  { content: '\201D'; }
+blockquote p        { margin:0; padding:0; }
+blockquote q:before { content: '\2018'; }
+blockquote q:after  { content: '\2019'; }
+.cite { margin:0; text-align:right; margin-right: 40px;}
+
+/***************************************************************************/
+/* Specific clases for use with the .fx: macro */
+
+/* smaller and larger */
+.smaller section {
+  font-size: 18pt;
+}
+
+.smaller div h1 {
+  font-size: 40pt;
+}
+
+.smaller section pre {
+  font-size: 10pt;
+}
+
+.larger section {
+  font-size: 22pt;
+}
+
+.larger div h1 {
+  font-size: 40pt;
+}
+
+.larger section pre {
+  font-size: 14pt;
+}
+
+/* titleslide: displaying a title(h1) and subtitle(h2) on the same slide */
+div.titleslide { text-align: center; }
+div.titleslide h1 { padding-top: 50pt; font-size: 60pt; font-weight: bold;}
+
+/* imageslide: covering a whole slide with an image */
+div.slides div.imageslide {margin: 0; width: 750pt; height: 460pt; overflow: hidden}
+div.imageslide img { 
+  position: relative; 
+  /*top: -144pt;*/
+  /*top: -460pt;*/
+  /*left: -10pt; */
+  top: -138pt;
+  left: -10pt;
+  width: 750pt;
+  height: 460pt;
+  max-width: 750pt !important; 
+  max-height: 460pt !important; 
+  z-index: 0; 
+}
+
+div.imageslide h1 { position: relative; z-index: 3 !important; /*left: 40px; top: -70pt; */}
+
+/* black and white header for use with imageslide */
+div.whiteheading h1 {color: #fffffe !important;}
+div.blackheading h1 {color: black !important;}
+
+/***************************************************************************/
+/* Syntax highlighting is by Pygments - select via config file */
+.lineno {color: #aaa; }  /* Line numbers */
+
+
+
+/***************************************************************************/
+/* The structure - You shouldn't need to change anything from here on down */
+body {
+  /*padding : 70pt;*/
+  margin  : 0;
+  overflow: hidden;
+}
+
+div.presentation, div.slides {
+    transform: scale(1),
+    -ms-transform: scale(1),
+    -moz-transform: scale(1),
+    -webkit-transform: scale(1),
+    -o-transform: scale(1),
+}
+
+/*div.slides {
+  width: 754pt !important;
+  height: 502pt !important;
+}*/
+
+div.slide {
+  display: block !important;
+  width: 740pt !important;
+  height: 460pt !important;
+  border: 2pt solid #ddd;
+/*  width      : 100%;
+  height     : 100%;*/
+  overflow   : hidden;
+  page-break-after: always;
+}
+
+div.slide div.inner {
+  width: 750pt !important;
+  height: 460pt !important;
+  margin: auto;
+  display: table-cell;
+  padding: 10pt;
+}
+
+
+/* A title slide is a single header */
+.slide header:only-child {
+  display: table;
+}
+
+.slide header:only-child h1 {
+  width: 750pt !important;
+  height: 460pt !important;
+  text-align    : center;
+  display       : table-cell;
+  vertical-align: middle;
+}
+
+/*.slide header:only-child h1 {
+  line-height: 180%;
+  text-align: center;
+  display: table-cell;
+  vertical-align: middle;
+  height: 600px;
+  width: 800px;
+  font-size: 48px;
+  margin-top:100px;
+  margin-bottom:100px;
+}
+*/
+
+
+ol {
+  margin-left: 5pt;
+}
+
+/* Image alignment options. Note that we align centre by default */
+img { display: block; margin: auto; max-width: 600pt; max-height: 340pt;}
+
+section img.align-center, section img.align-centre, section img.center, section img.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section img.align-right, section img.right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+section img.align-left, section img.left {
+  display: block;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+section img.float-right {
+  display: block;
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+section img.float-left {
+  display: block;
+  float: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Source and page number */
+aside, footer {
+  display: block;
+  visibility: visible;
+}
+
+aside.source {
+  display: none;
+}
+
+.page_number {
+  position: relative; 
+  text-align: right;
+  display: block !important;
+  visibility: visible !important;
+  top: -40pt;
+  right    : 0px;
+  color    : black !important;
+  padding  : 5pt !important;  
+}
+
+
+#toc, #help, .slide .notes,
+.presenter_notes, #current_presenter_notes, #presenter_note,
+ #time {
+  display: none;
+}
+
+
+/* Turn of page numbers by uncommenting this */
+.page_number {
+  display: none !important;
+}
+
+/* Custom CSS bits */
+.credits {
+    float: right; 
+    text-align:left;
+    padding-top: 150pt !important;
+}
+
+.columnlist2 ul {
+    vertical-align: top;
+    -moz-column-count: 2;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 2;
+    -webkit-column-gap: 20px;
+    column-count: 2;
+    column-gap: 20px;
+}
+
+.columnlist3 ul {
+    vertical-align: top;
+    -moz-column-count: 3;
+    -moz-column-gap: 20px;
+    -webkit-column-count: 3;
+    -webkit-column-gap: 20px;
+    column-count: 3;
+    column-gap: 20px;
+}
+
+    </style>
+    <style type="text/css" media="screen, projection">
+      /***************************************************************************/
+/* The bits that you probably want to override! */
+body {
+    font-size: 36px;
+    font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
+    color: black;
+    background-color: #333; /* Colour outside of slide */
+}
+
+div.presentation, div.slide {
+  background-color: white; /* colour of the slide */
+}
+
+div.slide h1, div.slide h2, div.slide h3, div.slide h4, div.slide h5, div.slide h6 {
+  color: navy;
+  font-weight: normal;
+}
+
+pre {
+  font-size: 26px;
+  font-family: Monaco, Courier, monospace;
+}
+
+li {
+  padding: 10px 0;
+}
+
+table {
+  margin-top: 10px;
+  border-collapse: collapse;
+  width: 100%;
+}
+table th {
+  text-align: left;
+  border-bottom: 1px solid #666;
+}
+table td, table th {
+  padding-left:   10px;
+  padding-right:  10px;
+  padding-top:    4px;
+  padding-bottom: 4px;
+}
+tr > td:first-child, tr > th:first-child {
+  padding-left: 0;
+}
+
+/* .notes are displayed when you press '2' */
+.notes {
+  color: white;
+  background: #777;
+  opacity:0.90;
+}
+
+/* A title slide is a single header */
+.slide header:only-child h1 {
+  font-weight: bold;
+  font-size: 80px;
+}
+
+/* Source and page number */
+aside.source, aside.page_number {
+  font-size: 20px;
+}
+
+/* Quote and blockquote */
+blockquote          { text-indent: -1ex; margin-bottom: 10px;}
+blockquote *        { quotes: none; }
+blockquote p:before { content: '\201C'; }
+blockquote p:after  { content: '\201D'; }
+blockquote p        { margin:0; padding:0; }
+blockquote q:before { content: '\2018'; }
+blockquote q:after  { content: '\2019'; }
+.cite { margin:0; text-align:right; margin-right: 40px;}
+
+/***************************************************************************/
+/* Specific clases for use with the .fx: macro */
+
+/* smaller and larger */
+.smaller section {
+  font-size: 30px;
+}
+
+.smaller div h1 {
+  font-size: 72px;
+}
+
+.smaller section pre {
+  font-size: 24px;
+}
+
+.larger section {
+  font-size: 42px;
+}
+
+.larger div h1 {
+  font-size: 72px;
+}
+
+.larger section pre {
+  font-size: 28px;
+}
+
+/* titleslide: displaying a title(h1) and subtitle(h2) on the same slide */
+div.titleslide { text-align: center; }
+div.titleslide h1 { padding-top: 140px; font-size: 80px; font-weight: bold;}
+
+/* imageslide: covering a whole slide with an image */
+div.slides div.imageslide {margin: 0; width: 1024px; height: 768px;}
+div.imageslide img { 
+  position: absolute; 
+  top: 0; left: 0; 
+  width: 1024px; 
+  max-width: 1024px; max-height: 768px;
+  z-index: 0; 
+}
+
+div.imageslide h1 { position: absolute; z-index: 3; left: 40px; top: 0; }
+
+/* black and white header for use with imageslide */
+div.whiteheading h1 {color: white !important;}
+div.blackheading h1 {color: black !important;}
+
+/***************************************************************************/
+/* Syntax highlighting is by Pygments - select via config file */
+.lineno {color: #aaa; }  /* Line numbers */
+
+
+/***************************************************************************/
+/* Slide transition */
+.slide.past {
+  opacity: 0;
+}
+
+.slide.current {
+  opacity: 1;
+  -webkit-transition: opacity 0.75s ease;
+  -moz-transition: opacity 0.75s ease;
+  -o-transition: opacity 0.75s ease;
+}
+
+.slide.future {
+  opacity: 0;
+}
+
+/***************************************************************************/
+/* The structure - You shouldn't need to change anything from here on down */
+body {
+  padding : 0;
+  margin  : 0;
+  width   : 100%;
+  height  : 100%;
+  overflow: hidden;
+}
+
+div.presentation {
+  margin     : 0px auto;
+  width      : 1024px;
+  height     : 768px;
+  position   : absolute;
+  top        : 50%;
+  left       : 50%;
+  margin-left: -512px;
+  margin-top : -384px;
+}
+
+div.slides {
+  width      : 1024px;
+  height     : 768px;
+}
+
+div.slide {
+  display    : none;
+  margin-left: 80px; /* Nice big margin */
+  margin-top : 40px;
+  width      : 864px;
+  height     : 688px;
+  position   : absolute;
+  overflow   : hidden;
+}
+
+.slide.past, .slide.current {
+  display: block;
+}
+
+.slide.future {
+  display: none;
+}
+
+/* A title slide is a single header */
+.slide header:only-child {
+  display: table;
+}
+
+.slide header:only-child h1 {
+  height        : 600px;
+  width         : 864px;
+  text-align    : center;
+  display       : table-cell;
+  vertical-align: middle;
+}
+
+ol {
+  margin-left: 15px;
+}
+
+/* Image alignment options. Note that we align centre by default */
+img { display: block; margin: auto; max-width: 864px; max-height: 500px;}
+
+section img.align-center, section img.align-centre, section img.center, section img.centre {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+section img.align-right, section img.right {
+  display: block;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+section img.align-left, section img.left {
+  display: block;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+section img.float-right {
+  display: block;
+  float: right;
+  margin-left: auto;
+  margin-right: 0;
+}
+
+section img.float-left {
+  display: block;
+  float: left;
+  margin-right: auto;
+  margin-left: 0;
+}
+
+/* Blank screen */
+#blank {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  z-index: 64;
+  display: none;
+}
+body.presenter_view.blank .slide.current {
+   opacity: 0.2;
+}
+
+body.presenter_view #blank {
+    display: none !important;
+}
+
+/* Display notes (keyboard: 2) */
+.notes {
+  display   : none;
+  padding   : 30px;
+  color: white;
+  position:absolute;
+  width     : 710px;
+  min-height: 300px;
+  left: 51px;
+  top: 123px;
+  overflow  : hidden;
+}
+
+/* Source and page number */
+aside {
+  display: none;
+}
+aside.source {
+  position: absolute;
+  bottom: 6px;
+  left: 0px;
+}
+aside.page_number {
+  position: absolute;
+  bottom: 6px;
+  right: 0px;
+}
+
+
+/* Expose */
+body.expose div.slides {
+  float           : left;
+  position        : relative;
+  overflow        : auto;
+  margin          : 10px;
+  width           : 1024px;
+  height          : 768px;
+  background-color: #fff !important;
+}
+
+body.expose div.slide {
+  display                 : block;
+  width                   : 864px;
+  height                  : 688px;  
+  float                   : left;
+  position                : relative;
+  left                    : auto !important;
+  top                     : auto !important;
+  margin                  : 0 !important;
+  margin-left             : 10px !important;
+  margin-top              : 10px !important;
+  padding                 : 10px !important;
+  -webkit-transition      : none;
+  -moz-transition         : none;
+  -o-transition           : none;  
+  -moz-transform          : scale(.30, .30);
+  -moz-transform-origin   : 0 0;
+  -webkit-transform       : scale(.30, .30);
+  -webkit-transform-origin: 0 0;
+  -o-transform            : scale(.30, .30);
+  -o-transform-origin     : 0 0;
+  cursor                  : pointer;
+  border                  : 10px solid #ccc;
+  /*background-color        : #eee;*/
+}
+
+body.expose div.slide:hover {
+  /*background-color: #D7FCFC;*/
+  border: 10px solid blue;
+}
+
+body.expose .slide-wrapper {
+  float   : left;
+  position: relative;
+  overflow: hidden;
+  margin  : .5%;
+  width   : 300px;
+  height  : 233px;
+}
+
+body.expose .slide.far-past,
+body.expose .slide.past,
+body.expose .slide.future,
+body.expose .slide.far-future {
+  margin-left: 0;
+  opacity: 1;
+}
+
+body.expose .slide.current {
+  border: 10px solid red;
+  -moz-transform: scale(.30, .30);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(.30, .30);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(.30, .30);
+  -o-transform-origin: 0 0;
+}
+
+body.expose .slide aside {
+  display: block;
+}
+body.expose .slide aside.source {
+  display: none;
+}
+body.expose .slide aside.page_number {
+  display         : block;
+  position        : absolute;
+  bottom          : 10px;
+  right           : 10px;
+  font-size       : 40px;
+  background-color: #eee;
+  color           : black;
+  padding         : 10px;
+}
+
+body.expose .slide.current aside.page_number {
+  background-color: red;
+  color: white;
+}
+
+body.expose .slide:hover aside.page_number {
+  background-color: blue;
+  color: white;
+}
+
+/* Sidebar for ToC and Help */
+.sidebar {
+  background-color: #eee;
+  color: #000;
+  border-right: 5px solid #ddd;
+  z-index: 63;
+  height: 100%;
+  overflow: hidden;
+  top: 0;
+  position: absolute;
+  display: block;
+  margin: 0;
+  padding: 10px 16px;
+  overflow: auto;
+  -webkit-transition: margin 0.2s ease-in-out;
+  -moz-transition: margin 0.2s ease-in-out;
+  -o-transition: margin 0.2s ease-in-out;
+  font-size: 14px;
+}
+
+.sidebar.hidden {
+  margin-left: -500px;
+}
+
+.sidebar h2 {
+  margin: 0 0 16px;
+  padding: 0;
+}
+
+.sidebar table {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  border-collapse: collapse;
+}
+
+.sidebar table caption {
+  display: none;
+}
+
+.sidebar tr {
+  margin: 2px 0;
+  border-bottom: 1px solid #ccc;
+}
+
+.sidebar th {
+  text-align: left;
+  font-weight: normal;
+  max-width: 300px;
+  overflow: hidden;
+}
+
+.sidebar tr.sub th {
+  text-indent: 20px;
+}
+
+.sidebar td {
+  text-align: right;
+  min-width: 20px;
+}
+
+.sidebar a {
+  color: #000;
+  display: block;
+  text-decoration: none;
+  border-bottom: none;
+  padding: 4px 0;
+}
+
+.sidebar tr.active, .sidebar tr.active:hover, .sidebar tr.active a {
+  background: white;
+}
+
+.sidebar tr:hover {
+  background: #ccc;
+}
+
+/* Presenter Mode */
+body.presenter_view, body.presenter_view div.presentation {
+  background-color: #333 !important;
+}
+body.presenter_view div.slides {
+  margin-left: -40px !important;
+  margin-top : -30px !important;
+}
+
+body.presenter_view div.slide {
+  display: inline;
+  position: absolute;
+  overflow: hidden;
+  -moz-transform: scale(0.55, 0.55);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(0.55, 0.55);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(0.55, 0.55);
+  -o-transform-origin: 0 0;
+  opacity: 1;
+  width: 864px !important;
+  height: 688px !important;
+  margin-left: 60px !important;
+  margin-top: 90px !important;
+}
+
+body.presenter_view .slide.far-past {
+  display: none;
+}
+
+body.presenter_view .slide.past {
+  display: none;
+}
+
+body.presenter_view .slide.current {
+  display: block;
+  border: 8px solid maroon;
+  z-index: 2;
+}
+
+body.presenter_view .slide.future {
+  display: block;
+  margin-left: 560px !important;
+  z-index: 1;
+  opacity: 1;
+  margin-top: 90px !important;
+  border: 8px solid #aaa;
+  -moz-transform: scale(0.55, 0.55);
+  -moz-transform-origin: 0 0;
+  -webkit-transform: scale(0.55, 0.55);
+  -webkit-transform-origin: 0 0;
+  -o-transform: scale(0.55, 0.55);
+  -o-transform-origin: 0 0;
+}
+
+body.presenter_view .slide.far-future {
+  display: none;
+  margin-left: 525px;
+}
+
+body.presenter_view div#current_presenter_notes {
+  visibility: visible;
+  display: block;
+  position: absolute;
+  overflow: auto;
+  vertical-align: middle;
+  left: 0;
+  top: 60%;
+  height: 38%;
+  margin-left: 20px;
+  z-index: 2;
+  width: 973px;
+  border: 4px solid #aaa;
+  background-color: #eee;
+}
+
+body.presenter_view div#current_presenter_notes section {
+    background-color: #eee !important;
+}
+
+body.presenter_view .slide aside.page_number {
+  display         : block;
+  position        : absolute;
+  bottom          : 10px;
+  right           : 10px;
+  font-size       : 70px;
+  background-color: #eee;
+  color           : black;
+  padding         : 10px;
+}
+
+body.presenter_view .slide.current aside.page_number {
+  background-color: maroon;
+  color: white;
+}
+
+/* Time display */
+#time { display: none; }
+
+body.presenter_view #time {
+  display: block;
+  color: white;
+  float:right;
+  width: 200px;
+  text-align: right;
+  margin-right: 40px;
+  margin-top: 20px;
+  padding: 0;
+  line-height: 0;
+  font-size: 55px;
+}
+
+body.presenter_view div#current_presenter_notes header {
+  border-bottom: 1px solid #ccc;
+}
+body.presenter_view div#current_presenter_notes header h1 {
+  margin: 5px 10px;
+}
+
+body.presenter_view div#current_presenter_notes section {
+  font-family: "Helvetica", "Arial", "Liberation Sans", sans-serif;
+  font-size: 20px;
+  color: black;
+  display: block;
+  overflow: visible;
+  position: relative;
+  background-color: #fffeff;
+  margin: 0;
+  padding: 10px;
+/*  border: 3px solid blue;*/
+
+}
+
+body.presenter_view div#current_presenter_notes section p {
+  margin: 0;
+}
+
+body.presenter_view div#current_presenter_notes section li {
+  font-size: inherit;
+  padding: 0;
+}
+
+body.presenter_view div#current_presenter_notes h1 {
+  margin-left: 10px;
+  font-size: 20px;
+  display: block;
+
+}
+
+div#current_presenter_notes {
+  display: none;
+}
+
+div.slide div.presenter_notes {
+  display: none;
+}
+
+    </style>
+    
+    
+      
+      <style type="text/css" media="screen, projection">
+        .highlight .hll { background-color: #49483e }
+.highlight  { background: #272822; color: #f8f8f2 }
+.highlight .c { color: #75715e } /* Comment */
+.highlight .err { color: #960050; background-color: #1e0010 } /* Error */
+.highlight .k { color: #66d9ef } /* Keyword */
+.highlight .l { color: #ae81ff } /* Literal */
+.highlight .n { color: #f8f8f2 } /* Name */
+.highlight .o { color: #f92672 } /* Operator */
+.highlight .p { color: #f8f8f2 } /* Punctuation */
+.highlight .cm { color: #75715e } /* Comment.Multiline */
+.highlight .cp { color: #75715e } /* Comment.Preproc */
+.highlight .c1 { color: #75715e } /* Comment.Single */
+.highlight .cs { color: #75715e } /* Comment.Special */
+.highlight .ge { font-style: italic } /* Generic.Emph */
+.highlight .gs { font-weight: bold } /* Generic.Strong */
+.highlight .kc { color: #66d9ef } /* Keyword.Constant */
+.highlight .kd { color: #66d9ef } /* Keyword.Declaration */
+.highlight .kn { color: #f92672 } /* Keyword.Namespace */
+.highlight .kp { color: #66d9ef } /* Keyword.Pseudo */
+.highlight .kr { color: #66d9ef } /* Keyword.Reserved */
+.highlight .kt { color: #66d9ef } /* Keyword.Type */
+.highlight .ld { color: #e6db74 } /* Literal.Date */
+.highlight .m { color: #ae81ff } /* Literal.Number */
+.highlight .s { color: #e6db74 } /* Literal.String */
+.highlight .na { color: #a6e22e } /* Name.Attribute */
+.highlight .nb { color: #f8f8f2 } /* Name.Builtin */
+.highlight .nc { color: #a6e22e } /* Name.Class */
+.highlight .no { color: #66d9ef } /* Name.Constant */
+.highlight .nd { color: #a6e22e } /* Name.Decorator */
+.highlight .ni { color: #f8f8f2 } /* Name.Entity */
+.highlight .ne { color: #a6e22e } /* Name.Exception */
+.highlight .nf { color: #a6e22e } /* Name.Function */
+.highlight .nl { color: #f8f8f2 } /* Name.Label */
+.highlight .nn { color: #f8f8f2 } /* Name.Namespace */
+.highlight .nx { color: #a6e22e } /* Name.Other */
+.highlight .py { color: #f8f8f2 } /* Name.Property */
+.highlight .nt { color: #f92672 } /* Name.Tag */
+.highlight .nv { color: #f8f8f2 } /* Name.Variable */
+.highlight .ow { color: #f92672 } /* Operator.Word */
+.highlight .w { color: #f8f8f2 } /* Text.Whitespace */
+.highlight .mf { color: #ae81ff } /* Literal.Number.Float */
+.highlight .mh { color: #ae81ff } /* Literal.Number.Hex */
+.highlight .mi { color: #ae81ff } /* Literal.Number.Integer */
+.highlight .mo { color: #ae81ff } /* Literal.Number.Oct */
+.highlight .sb { color: #e6db74 } /* Literal.String.Backtick */
+.highlight .sc { color: #e6db74 } /* Literal.String.Char */
+.highlight .sd { color: #e6db74 } /* Literal.String.Doc */
+.highlight .s2 { color: #e6db74 } /* Literal.String.Double */
+.highlight .se { color: #ae81ff } /* Literal.String.Escape */
+.highlight .sh { color: #e6db74 } /* Literal.String.Heredoc */
+.highlight .si { color: #e6db74 } /* Literal.String.Interpol */
+.highlight .sx { color: #e6db74 } /* Literal.String.Other */
+.highlight .sr { color: #e6db74 } /* Literal.String.Regex */
+.highlight .s1 { color: #e6db74 } /* Literal.String.Single */
+.highlight .ss { color: #e6db74 } /* Literal.String.Symbol */
+.highlight .bp { color: #f8f8f2 } /* Name.Builtin.Pseudo */
+.highlight .vc { color: #f8f8f2 } /* Name.Variable.Class */
+.highlight .vg { color: #f8f8f2 } /* Name.Variable.Global */
+.highlight .vi { color: #f8f8f2 } /* Name.Variable.Instance */
+.highlight .il { color: #ae81ff } /* Literal.Number.Integer.Long */
+
+      </style>
+      
+    
+      
+      <style type="text/css" media="screen, projection">
+        /***************************************************************************/
+/* A custom CSS to provide a black background */
+
+body {
+    color: #eee;
+    background-color: #333; /* Colour outside of slide */
+}
+
+div.presentation, div.slide {
+  background-color: black; /* colour of the slide */
+}
+
+div.slide h1, div.slide h2, div.slide h3, div.slide h4, div.slide h5, div.slide h6 {
+  color: #fff;
+  font-weight: normal;
+}
+
+      </style>
+      
+    
+      
+      <style type="text/css" media="screen, projection">
+        /* We can customize the theme CSS here */
+
+      </style>
+      
+    
+    <!-- /Styles -->
+</head>
+<body>
+  <div id="blank"></div>
+  <div class="presentation">
+    <div class="slides">
+      
+      <!-- slide source: slides.md -->
+      <div class="slide-wrapper">
+        <div class="slide">
+          <div class="inner">
+            
+            <header><h1>Stress Management- The slides</h1></header>
+            
+            <section>
+              <p><a href="http://hydrantmark.github.io/smtalk-20140129/presentation/stress-management.html">View slides (generated from markdown using <a href="https://github.com/adamzap/landslide">Landslide</a>)</a></p>
+              <h2>Shorcut keys</h2>
+              <p>(From <a href="https://github.com/adamzap/landslide">https://github.com/adamzap/landslide</a>)</p>
+              <ul>
+                <li>Press h to toggle display of help</li>
+                <li>Press left arrow and right arrow to navigate</li>
+                <li>Press t to toggle a table of contents for your presentation. Slide titles are links</li>
+                <li>Press ESC to display the presentation overview (Exposé)</li>
+                <li>Press n to toggle slide number visibility</li>
+                <li>Press b to toggle screen blanking</li>
+                <li>Press c to toggle current slide context (previous and next slides)</li>
+                <li>Press e to make slides filling the whole available space within the document body</li>
+                <li>Press S to toggle display of link to the source file for each slide</li>
+                <li>Press '2' to toggle notes in your slides (specify with the .notes macro)</li>
+                <li>Press '3' to toggle pseudo-3D display (experimental)</li>
+                <li>Browser zooming is supported</li>
+              </ul>
+            </section>
+            
+          </div>
+
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+</html>
